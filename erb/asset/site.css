@@ -1,0 +1,65 @@
+/*
+  SITE STYLES
+*/
+
+.h-product-overlay {
+  background: #000;
+  opacity: 0.3 !important;
+}
+
+@media screen and (min-width: 0px) {
+  .h-productinfo, .h-overlay-content {
+    height: 410px !important;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .h-productinfo, .h-overlay-content {
+    height: 420px !important;
+  }
+}
+
+@media screen and (min-width: 970px) {
+  .h-productinfo, .h-overlay-content {
+    height: 450px !important;
+  }
+}
+
+@media screen and (min-width: 1170px) {
+  .h-productinfo, .h-overlay-content {
+    height: 460px !important;
+  }
+}
+
+.h-productinfo img, .h-overlay-content img {
+  width: 100%;
+  height: 300px !important;
+  box-shadow: none !important;
+  background: no-repeat center center;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+}
+
+.h-view-product img {
+   width: 100%;
+  background: no-repeat center center;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+}
+
+.h-other-images {
+  margin-top: 40px; 
+}
+
+.h-other-images img {
+  width: 90px;
+  background: no-repeat center center;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+}

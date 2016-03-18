@@ -1,0 +1,8 @@
+<!-- @layout site -->
+
+<% if products.list.empty? %>
+  <h2>There are not result for "<%= params.get :products_similar_to %>"<h2>
+<% else %>
+  <p>Search result for "<%= params.get :products_similar_to %>"<p>
+  <%= partial "products" %>
+<% end %>

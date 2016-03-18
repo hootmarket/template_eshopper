@@ -1,0 +1,49 @@
+<h2>Departments</h2>
+<div class="panel-group category-products" id="accordian">
+  <div class="panel panel-default">
+    <% for d in departments.list %>
+      <% if d.categories.empty? %>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a href="/department/<%= d.slug %>"><%= d.name %></a>
+            </h4>
+          </div>
+        </div>
+      <% else %>
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordian" href="#<%= d.slug %>">
+              <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+              <%= d.name %>
+            </a>
+          </h4>
+        </div>
+        <div id="<%= d.slug %>" class="panel-collapse collapse">
+          <div class="panel-body">
+            <ul>
+              <% for c in d.categories %>
+                <li>
+                  <a href="/department/<%= d.slug %>/category/<%= c.slug %>"><%= c.name %></a>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div class="brands_products">
+  <h2>Brands</h2>
+  <div class="brands-name">
+    <ul class="nav nav-pills nav-stacked">
+      <% for b in brands.list %>
+        <li>
+          <a href="/brand/<%= b.slug %>"><%= b.name %></a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

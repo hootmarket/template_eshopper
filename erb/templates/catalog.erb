@@ -1,0 +1,7 @@
+<!-- @layout site -->
+
+<% if params.has :product_by_slug %>
+  <%= partial "product" %>
+<% else %>
+  <%= partial "products" %>
+<% end %>

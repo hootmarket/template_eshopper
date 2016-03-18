@@ -1,0 +1,34 @@
+<% p = products.get %>
+
+<div class="product-details">
+
+  <div class="col-sm-5">
+    <div class="view-product h-view-product s-product-detail-image">
+      <% if not p.images.empty? %>
+        <img src="<%= asset "transparent.png" %>" style="background-image: url(<%= p.images.first.url_512 %>)" alt="" />
+      <% end %>
+      <a href="<%= p.images.first.url %>">
+        <h3>ZOOM</h3>
+      </a>
+    </div>
+    <div class="h-other-images">
+      <% for img in p.images %>
+        <a href="" data-image="<%= img.url_512 %>" data-image-zoom="<%= img.url %>" class="pull-left">
+          <img src="<%= asset "transparent.png" %>" style="background-image: url(<%= img.url_128 %>);" />
+      </a>
+      <% end %>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+
+  <div class="col-sm-7">
+    <div class="product-information">
+      <h2><%= p.name %></h2>
+      <p>Ref: <%= p.code %></p>
+      <span><%= format p.price, :as_currency %></span>
+      <p><%= p.description %></p>
+      <p><b>Brand:</b> <%= p.brand.name %></p>
+      <a href=""><img src="<%= asset "share.png" %>" class="share img-responsive"  alt="" /></a>
+    </div>
+  </div>
+</div>

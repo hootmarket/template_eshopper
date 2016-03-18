@@ -1,0 +1,52 @@
+<% if not products.list(by_label_name: "CAROUSEL").empty? %>
+  <% carousel_products = products.list by_label_name: "CAROUSEL" %>
+  <div class="row">
+    <div class="col-md-12 s-vertical-separator">
+      <section id="slider">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <div id="slider-carousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <% i = 0 %>
+                  <% for p in carousel_products %>
+                    <li data-target="#slider-carousel" data-slide-to="<%= i %>" class="<% if i == 0 %>active<% end %>"></li>
+                    <% i += 1 %>
+                  <% end %>
+                </ol>
+
+                <div class="carousel-inner">
+                  <% i = 0 %>
+                  <% for p in carousel_products %>
+                    <div class="item <% if i == 0 %>active<% end %>">
+                      <div class="col-sm-6">
+                        <h1><%= p.name %></h1>
+                        <p><%= p.description %></p>
+                        <h4><%= format p.price, :as_currency %></h4>
+                        <a href="/product/<%= p.slug %>" type="button" class="btn btn-default get">Visit</a>
+                      </div>
+                      <div class="col-sm-6">
+                        <% if not p.images.empty? %>
+                          <img src="<%= p.images.first.url %>" class="girl img-responsive" alt="" />
+                        <% end %>
+                      </div>
+                    </div>
+                    <% i += 1 %>
+                  <% end %>
+                </div>
+
+                <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
+                  <i class="fa fa-angle-left"></i>
+                </a>
+                <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
+                  <i class="fa fa-angle-right"></i>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+<% end %>
