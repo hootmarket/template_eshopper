@@ -25,9 +25,9 @@
                         <h4><%= format p.price, :as_currency %></h4>
                         <a href="/product/<%= p.slug %>" type="button" class="btn btn-default get">Visit</a>
                       </div>
-                      <div class="col-sm-6">
+                      <div class="col-sm-6 h-carousel-image-column">
                         <% if not p.images.empty? %>
-                          <img src="<%= p.images.first.url %>" class="girl img-responsive" alt="" />
+                          <img src="<%= asset "transparent.png" %>" class="girl img-responsive" style="background-image: url(<%= p.images.first.url %>);"  alt="" />
                         <% end %>
                       </div>
                     </div>
